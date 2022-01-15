@@ -1,0 +1,1 @@
+arm-linux-gcc  test.c  -o main_ok  -L./ -lfont  -lm 

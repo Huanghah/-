@@ -1,0 +1,62 @@
+
+-------------------字库的使用步骤----------------------
+1.初始化字库 
+font *fontLoad(char *fontPath);  
+参数一：simfang.ttf 字库的路径 
+返回值：操作字库的句柄 
+// 打开字体
+	font *f = fontLoad("simfang.ttf");
+	
+	
+2.设置字体的大小 
+void fontSetSize(font *f, s32 pixels) 
+	参数一：操作的字库 
+	参数二：字体的大小 
+fontSetSize(f, 32);
+	
+3.设置字体输出框的大小
+bitmap *createBitmap(u32 width, u32 height, u32 byteperpixel);
+参数一：输出框的宽 
+参数一：输出框的高
+参数三：当前屏幕的色素    例如：32位-》4   
+bitmap *bm = createBitmap(200, 100, 4);
+
+或 3.0 可以指定输出框的颜色
+bitmap *createBitmap(u32 width, u32 height, u32 byteperpixel);
+参数一：输出框的宽 
+参数一：输出框的高
+参数三：当前屏幕的色素    例如：32位-》4 
+参数四：输出框的颜色  
+bitmap *bm = createBitmapWithInit(200, 100, 4,0x0000ff);  //蓝色
+
+4.把字体输出到输出框中
+void fontPrint(font *f, bitmap *screen, s32 x, s32 y, char *text, color c, s32 maxWidth)
+参数一：操作的字库 
+参数二：输出框   
+参数三：字体的位置    X轴  
+参数四：字体的位置    Y轴
+参数五：字体文本  
+参数六：字体颜色    
+参数七：一行显示字体的最大宽度    （例如：字体大小为32，假设设置为64则一行显示两个字体，就换行显示）
+								  默认为： 0
+								  
+5.把输出框的所有信息显示到LCD屏幕中 
+void show_font_to_lcd(unsigned int *p,int px,int py,bitmap *bm)
+参数一：LCD映射后的首地址
+参数二：字体框的显示位置 
+参数三：字体的位置 X轴
+参数四：字体的位置 Y轴
+参数五：设置好的字体输出框
+
+
+6.销毁所有初始化的东西
+// 关闭字体
+void fontUnload(font *f);
+fontUnload(f);
+
+void destroyBitmap
+// 关闭bitmap
+void destroyBitmap(bitmap *bm)
+
+注意：颜色的设置要用  getColor(A,B,G,R)
+
