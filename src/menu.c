@@ -14,27 +14,28 @@ void menu(void)
     //视频进入
 
     //显示主界面
-    show_all_bmp("./photo/main.bmp", 0, 0);
+    show_all_bmp("./photo/cover.bmp", 0, 0);
     printf("显示主界面\n");
     //双触摸解锁，从中间往两边打开，然后先显示一张白色背景图片，再显示2021年图片
     while(1)
     {
-        if(get_slide() == 0)
-        {
-            while(get_slide() != -1);
-            break;
-        }
-        if(get_slide() == -1)
+        rt = get_slide();
+        if(rt == -1)
         {
             while(get_slide() != 0);
             break;           
+        }
+        if(rt == 0)
+        {
+            while(get_slide() != -1);
+            break;
         }
     }
 
     int i= 11;
     while(1)
     {
-        Show_Bmp_Way("./photo/1.bmp", 3);
+        Show_Bmp_Way("./photo/main.bmp", 3);
         rt = get_slide();
         if(rt == 5)
             break;
@@ -58,6 +59,19 @@ void menu(void)
                         }
                         break;
                 case 3:
+                        Show_Bmp_Way("./photo/TWDC.bmp", 6);
+                        int font_i=1;
+                        while(1)
+                        {
+                            test_font(font_i++);
+                            if(font_i == 5)
+                                font_i=1;
+                            rt = get_slide();   
+                            if(rt == 5)
+                                break;
+                        }
+                        break;
+                case 4:                       
                         show_all_bmp("./photo/black.bmp", 0, 0);
                         while(1)
                         {
@@ -90,11 +104,8 @@ void menu(void)
                             }
                         }
                         break;
-                case 4:break;
             }
-            rt = get_slide();
-            if(rt == 5)
-                break;
+            break;
         }
     }
 

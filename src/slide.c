@@ -86,14 +86,14 @@ int get_slide()
 		printf("up slide ^\n");
 		return 1;
 	}	
-	if(x2 >150 && x2 < 250 && y2 > 220 && y2 < 260) 	//不划
+	if(x2 >250 && x2 < 315 && y2 > 224 && y2 < 295) 	//不划
 	{
 		printf("左边 !\n");
 		//ts_x = x1;
 		//ts_y = y1;
 		return 0;
 	}	
-	if(x2 >550 && x2 < 650 && y2 > 220 && y2 < 260)	
+	if(x2 >484 && x2 < 550 && y2 > 220 && y2 < 290)	
 	{
 		printf("右边 !\n");
 		//ts_x = x1;

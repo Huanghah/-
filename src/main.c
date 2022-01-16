@@ -3,7 +3,7 @@
 int main(void)
 {
     lcd_init();
-	system("madplay ./music/RF.mp3 &");// &后台播放背景音乐
+	//system("mplayer ./video/begin_video.mp4 -zoom -x 800 -y 480");
     //进入菜单
     menu();
     //退出界面

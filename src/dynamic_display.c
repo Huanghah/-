@@ -142,6 +142,14 @@ int Show_Bmp_Way(char *picname, int way)
 				usleep(2*1000);
 			}
 			break;	
+		case 6:		//从右往左
+			for(j=799; j>=0; j--)
+			{
+				for(i=0; i<480; i++)
+					lcdmap[800*i+j] = bmp_buf[800*i+j];
+				usleep(2*1000);
+			}
+			break;
 		default:	//直接显示
 			for(i=0; i<800*480; i++)
 				lcdmap[i] = bmp_buf[i];
