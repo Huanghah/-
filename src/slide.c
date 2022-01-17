@@ -61,6 +61,7 @@ int get_slide()
 	}
 	close(fd);	
 	//判断终点位置相对起点的位置
+
 	if(x1<10 && x2>10)
 	{
 		printf("return !\n");
@@ -99,6 +100,11 @@ int get_slide()
 		//ts_x = x1;
 		//ts_y = y1;
 		return -1;		
+	}
+	if(x2 >350 && x2 < 450 && y2 > 145 && y2 < 300)
+	{
+		printf("吉\n");
+		return 8;
 	}
 	if(x1 > 0 && y1 > 0)
 		return 6;

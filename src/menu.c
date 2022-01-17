@@ -37,8 +37,17 @@ void menu(void)
     {
         Show_Bmp_Way("./photo/main.bmp", 3);
         rt = get_slide();
-        if(rt == 5)
-            break;
+        if(rt == 8)
+        {
+            if(get_slide() == 8)
+            {
+                Show_Bmp_Way("./photo/end_one.bmp", 8);
+                Show_Bmp_Way("./photo/end_two.bmp", 10);
+                Show_Bmp_Way("./photo/end_three.bmp", 8);
+                break;
+            }
+        }
+
         //显示图片，上滑显示上半年，下滑显示下半年，左滑循环显示上一年，右滑显示下一年
         while(1)
         {
@@ -98,12 +107,13 @@ void menu(void)
                             }
                             else if(rt == 6)//单击
                             {
-                                Show_Bmp_Way(photo[(i+1)%12], 6);
+                                Show_Bmp_Way(photo[(i+1)%12], 7);
                                 get_slide();  
                                 show_all_bmp("./photo/black.bmp", 0, 0);
                             }
                         }
                         break;
+                default:break;
             }
             break;
         }

@@ -32,7 +32,7 @@ void test_font(int font_i)
     {
         titlemp = createBitmapWithInit(500,72, 4, 0x00000000);
         fontSetSize(f, 72);
-        fontPrint(f, titlemp, 242,0,"815",0xffffffff,0);
+        fontPrint(f, titlemp, 242,0,"830",0xffffffff,0);
         show_bitmap(lcd, 100, 400,  titlemp);
     }
 	
@@ -40,7 +40,7 @@ void test_font(int font_i)
     {
         titlemp = createBitmapWithInit(500,60, 4, 0x00000000);
         fontSetSize(f, 60);
-        fontPrint(f, titlemp, 42,0,"2年2个月23天",0xffffffff,0);
+        fontPrint(f, titlemp, 42,0,"2年3个月08天",0xffffffff,0);
         show_bitmap(lcd, 180, 400,  titlemp);	
     }
 
@@ -48,7 +48,7 @@ void test_font(int font_i)
     {
         titlemp = createBitmapWithInit(500,60, 4, 0x00000000);
         fontSetSize(f, 60);
-        fontPrint(f, titlemp, 42,0,"26个月23天",0xffffffff,0);
+        fontPrint(f, titlemp, 42,0,"27个月08天",0xffffffff,0);
         show_bitmap(lcd, 200, 400,  titlemp);
     }
 
@@ -56,7 +56,7 @@ void test_font(int font_i)
     {
         titlemp = createBitmapWithInit(500,72, 4, 0x00000000);
         fontSetSize(f, 72);
-        fontPrint(f, titlemp, 42,0,"116周3天",0xffffffff,0);
+        fontPrint(f, titlemp, 42,0,"118周4天",0xffffffff,0);
         show_bitmap(lcd, 210, 400,  titlemp);
     }
 

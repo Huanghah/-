@@ -83,7 +83,14 @@ int Show_Bmp_Way(char *picname, int way)
 				usleep(2*1000);
 			}
 			break;		
-		
+		case 10:		//从上往下缓慢版
+			for(i=0; i<480; i++)
+			{
+				for(j=0; j<800; j++)
+					lcdmap[800*i+j] = bmp_buf[800*i+j];
+				usleep(10*1000);
+			}
+			break;		
 		case 2:		//从左往右
 			for(j=0; j<800; j++)
 			{
